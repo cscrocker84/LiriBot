@@ -10,3 +10,19 @@ var spotify = new Spotify(keys.spotify);
 var artist = process.argv.slice(3).join("+")
 var movie = process.argv.slice(3).join("+")
 var song = process.argv.slice(3).join("+")
+
+function getConcert (artist) {
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(
+      function(response) {
+        console.log(process.argv.slice(3).join(" ") + " is playing at ------> " + '\n');
+        console.log(response.data)
+        for (i = 0; i < response.data.length; i ++) {
+          console.log(
+            "Venue: " + response.data[i].venue.name + '\n' +
+            "Location: " + response.data[i].venue.city + " " + response.data[i].venue.region + " " + response.data[i].venue.country +  '\n' +
+            "Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY') +  '\n' +
+            "---"
+            )
+        }
+      })
+  }
