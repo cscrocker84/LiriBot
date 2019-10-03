@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/cscrocker84/liriBot/issues"
   },
-  "homepage": "https://github.com/cscrocker84/liriBot#readme"
+  "homepage": "https://github.com/cscrocker84/liriBot#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.1.0",
+    "fs": "0.0.1-security",
+    "node-spotify-api": "^1.1.1"
+  }
 }
