@@ -100,4 +100,25 @@ function getMovie (movie) {
                 
                 })
             }
+
+            else {spotify.search({ type: 'track', query: song, limit: 5}, function(err, data) {
+                if (err) {
+                  return console.log('Error occurred: ' + err);
+                }
+            
+                for (i = 0; i < data.tracks.items.length; i ++) {
+                  console.log(
+                    "Artist: " + data.tracks.items[i].artists[0].name + '\n' +
+                    "Song Name: " + data.tracks.items[i].name +  '\n' +
+                    "Album Name: " + data.tracks.items[i].album.name +  '\n' +
+                    "Spotify Preview Link: " + data.tracks.items[i].external_urls.spotify +  '\n' +
+                    "---"
+                    )
+                }
+                })
+                
+              }
+            
+            }
+            
     
