@@ -54,6 +54,7 @@ function getMovie (movie) {
         )
       })
     }
+
     else {axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy").then(
   
         function (response) {
@@ -82,6 +83,7 @@ function getMovie (movie) {
             )
         })
         }
+    }
         function getSong (song) {
             if (process.argv[3] === undefined) {
               spotify.search({ type: 'track', query: 'the sign'} , function(err, data) {
@@ -120,5 +122,50 @@ function getMovie (movie) {
               }
             
             }
+
+            if (process.argv[2] === "concert-this") {
+                getConcert (artist)
+              } 
+              
+              if (process.argv[2] === "movie-this") {
+                getMovie (movie)
+              }
+              
+              if (process.argv[2] === "spotify-this-song") {
+                getSong (song)
+              }
+              
+              if (process.argv[2] === "do-what-it-says") {
+                fs.readFile("random.txt", "utf8", function(error, data) {
+                  if (error) {
+                    return console.log(error);
+                  }
+                  
+                  var dataArray = []
+                  dataArray = data.split(",")
+                  console.log(dataArray)
+              
+                  var artist = dataArray[1]
+                  var movie = dataArray[1]
+                  var song = dataArray[1]
+              
+                  if (dataArray[0] === "concert-this") {
+                    process.argv[3] = artist
+                    getConcert (artist)
+                  } 
+              
+                  if (dataArray[0] === "movie-this") {
+                    process.argv[3] = movie
+                    getMovie (movie)
+                  }
+                  
+                  if (dataArray[0] === "spotify-this-song") {
+                    process.argv[3] = song
+                    getSong(song)
+                  }
+              
+                 })
+              
+                }
             
     
