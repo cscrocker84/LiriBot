@@ -12,7 +12,11 @@ Once downloaded or via the link below, open the terminal for the file and follow
 <li>To get information about concerts for a musician, enter the following on the command line: "node liri.js concert-this insert artist name here"</li><br>
 <li>To get information about a movie, enter the following on the command line: "node liri.js movie-this insert movie title here" Note: if no movie is entered, it will give data for the movie "Mr. Nobody"</li><br>
 <li>To get information about a song, enter the following on the command line: "node liri.js spotify-this-song insert song name here" Note: It will return the first 5 songs via Spotify</li><br>
-<li>Note: if no song is entered, it will give data for the song "The Sign" by Ace of Base
-To read and run the command in the random.txt file, enter the following on the command line: "node liri.js do-what-it-says" Note: right now, based on random.txt, it will return Spotify information for the song "Aenema" by Tool</li><br>
+<li>Note: if no song is entered, it will give data for the song "The Sign" by Ace of Base</li>
+<li>To read and run the command in the random.txt file, enter the following on the command line: "node liri.js do-what-it-says" Note: right now, based on random.txt, it will return Spotify information for the song "Aenema" by Tool</li><br>
 </ul>
+<h2>Watch a video by opening the video in the above repository, LiriVid.mov
 <h2>Technologies Used</h2><br>
+<h3>Node.js</h3>
+<h3>Axios</h3>
+<h3>DotENV</h3>
